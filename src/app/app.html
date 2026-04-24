@@ -1,0 +1,13 @@
+<nav class="nav-container">
+  <h1>🎓 Air University Portal</h1>
+  <div class="nav-links">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/courses">Courses</a>
+    <a href="/profile">Profile</a>
+    <a href="#" onclick="localStorage.clear(); window.location.href='/login'" style="color: #ef4444;">Logout</a>
+  </div>
+</nav>
+
+<div class="content-wrapper">
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,29 @@
+<div class="controls-section">
+  <div class="add-course-box">
+    <h3>Add New Course</h3>
+    <div class="form-group">
+      <input [(ngModel)]="newCourseName" placeholder="Course Name">
+      <input [(ngModel)]="newCourseProgress" type="number" placeholder="Progress %" min="0" max="100">
+      <button (click)="addNewCourse()">Save Course</button>
+    </div>
+  </div>
+
+  <div class="search-box">
+    <h3>Search Catalog</h3>
+    <input [(ngModel)]="searchText" placeholder="Search courses..." class="search-input">
+  </div>
+</div>
+
+<h2>Available Courses</h2>
+<div class="course-list">
+  <div class="course-item" *ngFor="let course of getPaginatedCourses() | filter:searchText | sort">
+    <h4>{{ course.name }}</h4>
+    <span class="badge">{{ course.progress }}% Complete</span>
+  </div>
+</div>
+
+<div class="pagination">
+  <button (click)="prevPage()" [disabled]="currentPage === 1">Previous</button>
+  <span class="page-indicator"> Page {{ currentPage }} </span>
+  <button (click)="nextPage()">Next</button>
+</div>

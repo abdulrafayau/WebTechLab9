@@ -1,0 +1,15 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <h2>Welcome to Air University</h2>
+    <p>Sign in to access your portal.</p>
+    
+    <div class="input-group">
+      <input [(ngModel)]="username" placeholder="Username (type: student)">
+      <input [(ngModel)]="password" type="password" placeholder="Password (type: 1234)">
+    </div>
+
+    <p style="color: red; font-size: 14px;" *ngIf="errorMessage">{{ errorMessage }}</p>
+    
+    <button (click)="login()" class="login-btn">Login</button>
+  </div>
+</div>
